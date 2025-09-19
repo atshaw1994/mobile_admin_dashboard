@@ -12,6 +12,11 @@ class User < ApplicationRecord
   before_validation :set_default_role, on: :create
   before_validation :set_last_login_at, if: -> { status_changed? && status == "active" }
 
+
+  def admin?
+    role == "admin"
+  end
+
   private
 
   def set_default_role

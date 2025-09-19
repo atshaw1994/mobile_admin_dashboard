@@ -1,0 +1,70 @@
+<div class="user-profile">
+    <div class="profile-header">
+        <%= link_to users_path, class: "back-btn" do %>
+            <span class="material-symbols-rounded" aria-hidden="true">arrow_circle_left</span>
+        <% end %>
+        <h1>Create User</h1>
+    </div>
+        <div class="profile-details">
+            <div class="profile-info">
+                <%= form_with(model: @user, local: true) do |form| %>
+                    <% if @user.errors.any? %>
+                        <div class="alert alert-danger">
+                            <ul class="error-messages">
+                                <% @user.errors.full_messages.each do |message| %>
+                                    <li><em><%= message %>!</em></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    <% end %>
+                    <div class="profile-avatar" data-controller="avatar-upload" style="cursor:pointer;position:relative;">
+                        <% if @user.respond_to?(:profile_picture) && @user.profile_picture.respond_to?(:attached?) && @user.profile_picture.attached? %>
+                            <img src="<%= url_for(@user.profile_picture) %>" alt="<%= @user.username %> profile picture" class="profile-picture-large" id="avatar-preview" data-avatar-upload-target="preview" />
+                        <% else %>
+                            <span class="material-symbols-rounded default-profile-picture-large" id="avatar-preview" data-avatar-upload-target="preview" data-avatar-upload-target="icon">account_circle</span>
+                        <% end %>
+                        <%= form.file_field :profile_picture, direct_upload: true, accept: 'image/*', style: 'display:none;', data: { avatar_upload_target: "input", action: "change->avatar-upload#previewImage" } %>
+                        <span class="photo-camera-icon" data-action="click->avatar-upload#triggerUpload" data-avatar-upload-target="icon"> 
+                            <span class="material-symbols-rounded">photo_camera</span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <%= form.label :username %>
+                        <%= form.text_field :username, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                        <%= form.label :email %>
+                        <%= form.email_field :email, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                        <%= form.label :first_name %>
+                        <%= form.text_field :first_name, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                        <%= form.label :last_name %>
+                        <%= form.text_field :last_name, class: 'form-control' %>
+                    </div>
+                    <div class="form-group" data-controller="bio-counter" data-bio-counter-max-value="500">
+                        <%= form.label :bio %>
+                        <%= form.text_area :bio, class: 'form-control', data: { bio_counter_target: "textarea", action: "input->bio-counter#update" }, maxlength: 500 %>
+                        <div class="char-counter" data-bio-counter-target="counter">
+                            250 / 250
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <%= form.label :role %>
+                        <%= form.select :role, %w[admin moderator user], {}, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                        <%= form.label :password %>
+                        <%= form.password_field :password, class: 'form-control' %>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-accept">
+                            <span class="material-symbols-rounded" aria-hidden="true">check_circle</span>
+                        </button>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+</div>

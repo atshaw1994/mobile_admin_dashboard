@@ -1,0 +1,45 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.profile-details {
+    width: 100%;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-left: 16px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 80%;
+    padding: 16px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.form-group .char-counter {
+    color: gray;
+    margin-left: 16px;
+    font-size: 0.9em;
+    margin-top: 6px;
+}

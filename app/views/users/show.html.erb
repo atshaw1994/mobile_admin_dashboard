@@ -1,0 +1,27 @@
+<div class="user-profile">
+    <div class="profile-header">
+        <%= link_to users_path, class: "back-btn" do %>
+            <span class="material-symbols-rounded" aria-hidden="true">arrow_circle_left</span>
+        <% end %>
+        <h1>User Details</h1>
+    </div>
+    <div class="profile-details">
+        <div class="profile-avatar">
+            <% if @user.respond_to?(:profile_picture) && @user.profile_picture.respond_to?(:attached?) && @user.profile_picture.attached? %>
+                <img src="<%= url_for(@user.profile_picture) %>" alt="<%= @user.username %> profile picture" class="profile-picture-large" />
+            <% else %>
+                <span class="material-symbols-rounded default-profile-picture-large">account_circle</span>
+            <% end %>
+        </div>
+        <div class="profile-info">
+            <p><strong>Username:</strong> <%= @user.username %></p>
+            <p><strong>Email:</strong> <%= @user.email %></p>
+            <p><strong>First Name:</strong> <%= @user.first_name %></p>
+            <p><strong>Last Name:</strong> <%= @user.last_name %></p>
+            <p><strong>Bio:</strong> <%= @user.bio %></p>
+            <p><strong>Role:</strong> <%= @user.role %></p>
+            <p><strong>Status:</strong> <%= @user.status %></p>
+            <p><strong>Last Login At:</strong> <%= @user.last_login_at %></p>
+        </div>
+    </div>
+</div>

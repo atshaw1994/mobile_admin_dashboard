@@ -1,0 +1,133 @@
+.users-index {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.users-index h1 {
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px 2px lightgray;
+    margin-bottom: 8px;
+}
+
+.users-index ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: -16px;
+}
+
+.user-card {
+    background: linear-gradient(to bottom right, #ffffff, #f9f9f9);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.user-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    background: linear-gradient(to bottom right, #f9f9f9, #f3f3f3);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f3f3f3;
+    grid-column: 1 / 2;
+    justify-self: center;
+    align-self: center;
+    overflow: hidden;
+}
+
+.user-avatar .material-symbols-rounded.placeholder-avatar {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    user-select: none;
+    border-radius: 50%;
+}
+
+.user-info {
+    grid-column: 2 / 3;
+}
+
+.user-info .user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0090ab;
+}
+
+.user-info .user-username {
+    font-size: .8rem;
+    color: gray;
+    margin-top: -16px;
+}
+
+.user-actions {
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+}
+
+.user-actions a {
+    text-decoration: none;
+    color: #0090ab;
+    background-color: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.user-actions a:hover {
+    color: #09c3e4;
+}
+
+.user-actions a.btn-danger:hover {
+    color: red;
+}
+
+.btn-new-user {
+    display: block;
+    padding: 8px 12px;
+    width: 24px;
+    margin-top: -24px;
+    align-self: center;
+    background-color: #0090ab;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-new-user span {
+    padding-top: 2px;
+}
+
+.btn-new-user:hover {
+    background-color: #007891;
+}

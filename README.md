@@ -1,24 +1,7 @@
-# README
+# mobile_admin_dashboard
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple proof of concept of a mobile-friendly admin dashboard built using rails 8
 
-Things you may want to cover:
+This project was built to add a mobile admin dashboard to [Narratree](https://github.com/atshaw1994/Narratree) and is no longer maintained.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The local project on my system will be used as a baseline to begin working with React.JS

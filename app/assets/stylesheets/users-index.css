@@ -12,13 +12,15 @@
     text-align: center;
     color: black;
     text-shadow: 2px 2px 2px lightgray;
-    margin-bottom: 8px;
 }
 
 .users-index ul {
     list-style-type: none;
     padding: 0;
-    margin-top: -16px;
+}
+
+.user-list {
+    margin: 8px 0;
 }
 
 .user-card {
@@ -52,6 +54,8 @@
     justify-self: center;
     align-self: center;
     overflow: hidden;
+    /* overflow: visible; */
+    /* position: relative; */
 }
 
 .user-avatar .material-symbols-rounded.placeholder-avatar {
@@ -98,11 +102,12 @@
     padding: 8px 12px;
     border-radius: 50%;
     font-size: 0.9rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .user-actions a:hover {
     color: #09c3e4;
+    transform: scale(1.1);
 }
 
 .user-actions a.btn-danger:hover {
@@ -113,7 +118,6 @@
     display: block;
     padding: 8px 12px;
     width: 24px;
-    margin-top: -24px;
     align-self: center;
     background-color: #0090ab;
     color: white;
@@ -121,7 +125,7 @@
     border-radius: 50%;
     text-decoration: none;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-new-user span {
@@ -130,4 +134,5 @@
 
 .btn-new-user:hover {
     background-color: #007891;
+    transform: scale(1.1);
 }
